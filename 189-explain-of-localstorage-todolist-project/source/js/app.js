@@ -71,7 +71,7 @@ function makeDom(x){
     
     })
 }
-var name ;
+var name = 'oomm' ;
 function butDelett(s){
     list = JSON.parse(localStorage.getItem('list'))
     var index = list.findIndex(function(x){
