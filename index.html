@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squre</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+      }
+      div {
+        height: 50px;
+        width: 75px;
+        position: absolute;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let b = document.getElementsByTagName("body")[0];
+      let x, y;
+      let count = parseInt(Math.random() * 10);
+      while (count < 5) {
+        count = parseInt(Math.random() * 10);
+      }
+
+      function rndSqure(c) {
+        for (let i = 0; i < c; i++) {
+          let squre = document.createElement("div");
+          const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+          squre.style.backgroundColor = `#${randomColor}`;
+          squre.style.boxShadow = `5px 5px 8px #${randomColor}`;
+          let t = parseInt(Math.random() * 1000);
+          if (t > 600) {
+            t += -500;
+          }
+          squre.style.top = `${t}px`;
+          let l = parseInt(Math.random() * 1000);
+          if (l > 600) {
+            t += -450;
+          }
+          squre.style.left = `${l}px`;
+          squre.id = `item${i}`;
+          squre.addEventListener("dragstart", (e) => {
+            y = parseInt(squre.style.top) - e.clientY;
+            x = parseInt(squre.style.left) - e.clientX;
+          });
+          squre.addEventListener("dragend", (e) => {
+            squre.style.top = `${e.clientY + y}px`;
+            squre.style.left = `${e.clientX + x}px`;
+          });
+          squre.draggable = true;
+          b.appendChild(squre);
+        }
+      }
+      rndSqure(count);
+    </script>
+  </body>
+</html>
