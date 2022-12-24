@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>DragProject</title>
+    <style>
+      #contextMenu{
+        position: absolute; 
+        border-radius: 30px;
+        width: 200px;
+        height: 200px;
+        border: 5px solid rgb(20, 20, 100);
+        background-color: aqua;   
+        box-shadow:0px 0px 10px rgb(0, 0, 0); 
+      }
+    </style>
+  </head>
+  <body onmousemove="" on="" onmousedown="" onmouseup="" >
+    <div id="contextMenu" class="context-menu" oncontextmenu="" > 
+  </div> 
+    <script>
+      let b = document.querySelector('#contextMenu')
+      b.setAttribute("onclick","loadHandel()")
+      var bollsw = true
+      // document.body.setAttribute("oncontextmenu","return false")
+// document.body.setAttribute("ondblclick","dobleHandel()")
+document.body.setAttribute("onmousemove","contextmenu(event)")
+document.body.setAttribute("onmousedown","contextmenu1(event)")   
+b.setAttribute("onmouseup","dobleHandelup()")
+b.setAttribute("onmousedown","dobleHandeldown()")
+function dobleHandeldown(){
+    if(bollsw === true){
+        bollsw = false
+    }else bollsw = true
+    // console.log("down");
+}
+function dobleHandelup(){
+    if(bollsw === true){
+        bollsw = false
+    }else bollsw = true
+}
+function contextmenu1(event){
+    let x1 = Number(event.pageX) - b.style.top  
+    let y1 =  Number(event.pageY) - b.style.left  
+    // console.log(x1)
+}
+function contextmenu(event){    
+    event.preventDefault()
+    if(bollsw === false){
+    const x = event.pageX 
+    const y = event.pageY
+    b.style.display = ''
+    b.style.left = x - 100
+    b.style.top = y  - 100 
+    // console.log(event.pageX)
+}
+    // console.log('jj');
+// document.body.addEventListener('click',function(){
+//     b.style.display = 'none'
+// })
+// document.body.addEventListener('keydown',function(event1){
+//     // if (event1.keyCode == 32){
+//     //     b.style.display = 'none'
+//     // }
+//     console.log(event1)
+// }) 
+}
+    </script>    
+  </body>
+</html>

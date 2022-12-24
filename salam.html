@@ -1,0 +1,47 @@
+<html>
+<head>
+     <link rel="stylesheet" href="table.css">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>golaby</li>
+        <li class="22">sib</li>
+        <li>shalgham</li>
+
+    </ul>
+    <table>
+        <tr style="border-collapse:colaps;;height: 40px;width: 400px; ;">
+            <th style="border-collapse:colaps;align-items: center;height: 40px;width: 400px; ;">kiany</th>
+            <th style="border-collapse:colaps;align-items: center;height: 40px;width: 400px; ;">kiany</th>
+            <th style="border-collapse:colaps;align-items: center;height: 40px;width: 400px; ;">kiany</th>
+        </tr>
+
+    </table>
+    <div id="demo">
+        
+        <h1>lasis</h1>
+        <span>  piazzian</span>
+    </div>
+    <script>
+        var users = [
+            {name : "majid", age : 12 },
+            {name : "mamad", age : 13 },
+            {name : "naser", age : 25 },
+            {name : "sara" , age : 19 }
+        ]
+
+        let temp = "<table style=\"border: 5px solid saddlebrown;>"
+        for(var i = 0 ; i <users.length ; i++){
+            let user = users[i]
+                temp += "<tr style >" + "<th style=\"border-collapse:colaps;align-items: center;height: 40px;width: 400px;\">" + Number(i+1) + "</th>"
+                temp += "<th>" + user.name + "</th>"
+                temp +=  "<th>" + user.age + "</th>"
+                temp += "</tr>"
+        }
+        temp += "</table>"
+        document.getElementById("demo").innerHTML = temp
+        // var tex = document.createTextNode("javad")
+    </script>
+</body>
+</html>
