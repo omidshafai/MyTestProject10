@@ -9,6 +9,7 @@
 } */
 .uncompleted label{
   color: #afa7a7;
+  color: aliceblue;
   text-decoration: line-through;
 }
 #todoList .btn{
