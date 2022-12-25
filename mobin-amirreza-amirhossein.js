@@ -1,1 +1,0 @@
-maha bikarim va badbakht
